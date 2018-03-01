@@ -18,7 +18,7 @@ namespace ECommerce.DataModel
             
             [Column(TypeName = "varchar"), MaxLength(50)]
             public string Deskripsi { get; set; }
-
+            
             public virtual ICollection<Barang> Barangs { get; set; }
       }
 }

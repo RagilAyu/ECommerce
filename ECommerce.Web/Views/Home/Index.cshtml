@@ -27,19 +27,3 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
-
-@section Scripts
-{
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $.ajax({
-                url: '@Url.Action("ActivationPeriod", "PayrollPeriod")',
-                type: 'GET',
-                success: function (result)
-                {
-                    $("#payroll-period").html(result);
-                }
-            });
-        });
-    </script>
-}

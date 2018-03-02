@@ -23,7 +23,7 @@ namespace ECommerce.DataModel
                   context.SaveChanges();
 
                   //Barang
-                  context.Mst_Barang.Add(new Barang() { Kode = "BL", Kategori_Id = 1, NamaBarang = "Blouse", Gambar = Image.FromFile(@"qoregra-flowery-blouse.jpg"), Detail = "Bahan Spandex", Harga = 65000 });
+                  context.Mst_Barang.Add(new Barang() { Kode = "BL", Kategori_Id = 1, NamaBarang = "Blouse", Detail = "Bahan Spandex", Harga = 65000 });
                   context.Mst_Barang.Add(new Barang() { Kode = "ROK", Kategori_Id = 2, NamaBarang = "Rok", Detail = "Bahan Katun", Harga = 150000});
 
                   context.SaveChanges();

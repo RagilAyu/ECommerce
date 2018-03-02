@@ -26,5 +26,10 @@ namespace EmployeeApp2.Web.Controllers
 
                   return View();
             }
+
+            public ActionResult Login()
+            {
+                  return PartialView("_Login");
+            }
       }
 }

@@ -1,9 +1,49 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Halaman Utama";
 }
+<br />
+<a href="#">
+    <span class="js-seg-bar__search seg-bar__search ptl pbl">
+        <input class="lfloat js-seg-bar-search__selSearchInput seg-bar-search__selSearchInput" name="q" type="text"
+               placeholder="Contoh: Kaos, Sneakers, Mango,..."
+               autocomplete="off">
+    </span>
+</a>
 
-<div class="jumbotron" id="payroll-period">
-    Loading...
+<div class="jumbotron">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="https://cdn.shopify.com/s/files/1/1554/1155/files/qiu_LB_05.jpg?v=1512023856" alt="Los Angeles">
+            </div>
+
+            <div class="item">
+                <img src="https://cdn.shopify.com/s/files/1/1554/1155/files/qiu_LB_02.gif?v=1512024217" alt="Chicago">
+            </div>
+
+            <div class="item">
+                <img src="https://pixfeeds.com/images/33/610023/1200-610023-56297484.jpg" alt="New York">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 </div>
 
 <div class="row">

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ECommerce.ViewModel.BarangViewModel>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kategori_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaKategori)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaBarang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VarianWarna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VarianUkuran)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VarianStok)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Harga)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategori_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaKategori)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaBarang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VarianWarna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VarianUkuran)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VarianStok)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Harga)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -13,6 +13,9 @@ namespace ECommerce.DataModel
             [Key, DatabaseGenerated (DatabaseGeneratedOption.Identity)]
             public int Id { get; set; }
 
+            [Column(TypeName="image")]
+            public byte[] Gambar { get; set; }
+
             [Column(TypeName="varchar"), MaxLength(10), Required]
             public string Kode { get; set; }
 
@@ -31,5 +34,9 @@ namespace ECommerce.DataModel
             public virtual Kategori Kategori { get; set; }
 
             public virtual ICollection<Varian> Varians { get; set; }
+            //public virtual ICollection<Ulasan> Ulasan { get; set; }
+            //public virtual ICollection<DaftarKeinginan> DaftarKeinginan { get; set; }
+            //public virtual ICollection<Keranjang> Keranjang { get; set; }
+            //public virtual ICollection<Pembelian> Pembelian { get; set; }
       }
 }

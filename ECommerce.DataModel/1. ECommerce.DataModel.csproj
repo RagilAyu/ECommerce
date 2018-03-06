@@ -49,7 +49,7 @@
     <Compile Include="Barang.cs" />
     <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="ECommerceContext.cs" />
-    <Compile Include="Kategori.cs" />
+    <Compile Include="Keranjang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Varian.cs" />
   </ItemGroup>

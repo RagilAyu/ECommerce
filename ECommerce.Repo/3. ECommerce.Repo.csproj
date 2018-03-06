@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="BarangRepo.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="KeranjangRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VarianRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ECommerce.DataModel\1. ECommerce.DataModel.csproj">

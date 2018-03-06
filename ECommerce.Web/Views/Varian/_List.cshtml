@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ECommerce.ViewModel.VarianViewModel>
+
+<table class="table" id="data-list">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ukuran)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deskripsi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ukuran)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deskripsi)
+                </td>
+                <td>
+                    @*<button type="button" class="btn btn-warning btn-edit" data-id="@item.Id" title="Edit">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </button>*@
+                    <button type="button" class="btn btn-danger btn-delete" data-id="@item.Id" title="Delete">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $("#data-list").DataTable();
+    $(".btn-edit").click(function () {
+        $.ajax({
+            url: '@Url.Action("Edit", "Varian")',
+            type: 'get',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                $(".modal-title").html("Edit Varian");
+                $(".modal-body").html(result);
+                $("#modal-form").modal("show");
+            }
+        });
+    });
+
+    $(".btn-delete").click(function () {
+        $.ajax({
+            url: '@Url.Action("Delete", "Varian")',
+            type: 'get',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                $(".modal-title").html("Hapus Varian");
+                $(".modal-body").html(result);
+                $("#modal-form").modal("show");
+            }
+        });
+    });
+</script>

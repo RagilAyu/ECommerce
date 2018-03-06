@@ -35,13 +35,18 @@
                     @Html.DisplayFor(modelItem => item.VarianUkuran)
                 </td>
                 <td>
-                    <img src="https://id-live-02.slatic.net/p/7/damai-atasan-basic-niki-stripe-konveksi-tanah-abang-1515727902-07432597-00eb55ea46f7d1ed3f63f52ce0105c01-catalog_233.jpg" alt="Chicago">
+                    @Html.DisplayNameFor(model => model.PathGambar)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Harga)
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary btn-display" data-id="@item.Id" title="Pilih Item">Pilih</button>
+                    <button type="button" class="btn btn-warning btn-edit" data-id="@item.Id" title="Edit">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-delete" data-id="@item.Id" title="Delete">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
                 </td>
             </tr>
         }
@@ -49,16 +54,28 @@
 </table>
 
 <script type="text/javascript">
-
     $("#data-list").DataTable();
 
-    $(".btn-display").click(function () {
+    $(".btn-edit").click(function () {
         $.ajax({
-            url: '@Url.Action("Display", "Barang")',
+            url: '@Url.Action("Edit", "Barang")',
             type: 'get',
             data: { id: $(this).attr("data-id") },
             success: function (result) {
-                $(".modal-title").html("Detail Barang");
+                $(".modal-title").html("Edit Barang");
+                $(".modal-body").html(result);
+                $("#modal-form").modal("show");
+            }
+        });
+    });
+
+    $(".btn-delete").click(function () {
+        $.ajax({
+            url: '@Url.Action("Delete", "Barang")',
+            type: 'get',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                $(".modal-title").html("Hapus Barang");
                 $(".modal-body").html(result);
                 $("#modal-form").modal("show");
             }

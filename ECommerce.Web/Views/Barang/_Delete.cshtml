@@ -1,0 +1,75 @@
+﻿@model ECommerce.ViewModel.BarangViewModel
+
+<h3>Apakah Anda yakin untuk menghapus ini?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PathGambar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PathGambar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaBarang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaBarang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VarianUkuran)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VarianUkuran)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stok)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stok)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="button" class="btn btn-danger btn-delete-confirm" data-id="@Model.Id">Delete</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $(".btn-delete-confirm").click(function () {
+        $.ajax({
+            url: '@Url.Action("DeleteConfirm", "Barang")',
+            type: 'post',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                if (result.success) {
+                    $("#modal-form").modal("hide");
+                    ShowList();
+                } else {
+                    alert('Error : ' + result.message);
+                }
+            }
+        });
+    });
+</script>

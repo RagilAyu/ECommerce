@@ -1,7 +1,55 @@
 ﻿<aside class="main-sidebar">
     <section class="sidebar">
         <ul class="sidebar-menu" style=" height: auto; overflow: hidden; width: auto; padding-bottom: 10%;">
-            <li class="header"><strong>Wanita</strong></li>
+            <li class="header"><strong>NAVIGASI UTAMA</strong></li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-paperclip"></i>
+                    <span>Menu CRUD</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="@Url.Action("IndexCRUD", "Barang")">
+                            <i class="fa fa-book"></i><span>Barang CRUD</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Varian")">
+                            <i class="fa fa-book"></i><span>Varian CRUD</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-book"></i><span>Menu 1.3</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-paperclip"></i>
+                    <span>Menu Pembeli</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a href="@Url.Action("Index", "Barang")">
+                            <i class="fa fa-shopping-bag"></i><span>Barang</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Keranjang")">
+                            <i class="fa fa-shopping-cart"></i><span>Keranjang</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-book"></i><span>Menu 1.3</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </section>
 </aside>

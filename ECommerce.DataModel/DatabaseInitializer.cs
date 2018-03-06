@@ -16,22 +16,21 @@ namespace ECommerce.DataModel
 
             protected override void Seed(ECommerceContext context)
             {
-                  //Kategori
-                  context.Mst_Kategori.Add(new Kategori() { Kode = "AT", Deskripsi = "Atasan" });
-                  context.Mst_Kategori.Add(new Kategori() { Kode = "BW", Deskripsi = "Bawahan" });
-
-                  context.SaveChanges();
-
                   //Barang
-                  context.Mst_Barang.Add(new Barang() { Kode = "BL", Kategori_Id = 1, NamaBarang = "Blouse", Detail = "Bahan Spandex", Harga = 65000 });
-                  context.Mst_Barang.Add(new Barang() { Kode = "ROK", Kategori_Id = 2, NamaBarang = "Rok", Detail = "Bahan Katun", Harga = 150000});
+                  context.Mst_Barang.Add(new Barang() { Kode = "BL", NamaBarang = "Blouse", Varian_Id = 1, Stok = 4, Detail = "Bahan Spandex", Harga = 65000 });
+                  context.Mst_Barang.Add(new Barang() { Kode = "BL", NamaBarang = "Blouse", Varian_Id = 2, Stok = 8, Detail = "Bahan Spandex", Harga = 65000 });
+                  context.Mst_Barang.Add(new Barang() { Kode = "BL", NamaBarang = "Blouse", Varian_Id = 3, Stok = 3, Detail = "Bahan Spandex", Harga = 65000 });
+
+                  context.Mst_Barang.Add(new Barang() { Kode = "ROK", NamaBarang = "Rok Strip", Varian_Id = 1, Stok = 7, Detail = "Bahan Katun", Harga = 150000 });
+                  context.Mst_Barang.Add(new Barang() { Kode = "ROK", NamaBarang = "Rok Strip", Varian_Id = 2, Stok = 10, Detail = "Bahan Katun", Harga = 150000 });
+                  context.Mst_Barang.Add(new Barang() { Kode = "ROK", NamaBarang = "Rok Strip", Varian_Id = 3, Stok = 11, Detail = "Bahan Katun", Harga = 150000 });
 
                   context.SaveChanges();
 
                   //Varian
-                  context.Mst_Varian.Add(new Varian() { Barang_Id = 1, Ukuran = "S", Warna = "Hitam" , Stok = 2});
-                  context.Mst_Varian.Add(new Varian() { Barang_Id = 2, Ukuran = "M", Warna = "Hitam" , Stok = 3});
-                  context.Mst_Varian.Add(new Varian() { Barang_Id = 2, Ukuran = "S", Warna = "Hitam" , Stok = 1});
+                  context.Mst_Varian.Add(new Varian() { Ukuran = "S"});
+                  context.Mst_Varian.Add(new Varian() { Ukuran = "M"});
+                  context.Mst_Varian.Add(new Varian() { Ukuran = "L"});
 
                   context.SaveChanges();
 

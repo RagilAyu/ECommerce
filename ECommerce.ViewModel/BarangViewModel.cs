@@ -4,34 +4,38 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace ECommerce.ViewModel
 {
       public class BarangViewModel
       {
+            [Display(Name = "Id Barang")]
             public int Id { get; set; }
 
             [MaxLength(10), Required]
             public string Kode { get; set; }
-            public byte[] Gambar { get; set; }
 
-            public int Kategori_Id { get; set; }
+            [MaxLength(1000)]
+            public string PathGambar { get; set; }
 
-            public string NamaKategori { get; set; }
-
-            [MaxLength(50), Required]
+            [Display(Name ="Nama Barang"), MaxLength(50), Required]
             public string NamaBarang { get; set; }
 
-            public string VarianWarna { get; set; }
+            [Display(Name = "Ukuran")]
+            public int Varian_Id { get; set; }
 
+            [Display(Name ="Ukuran")]
             public string VarianUkuran { get; set; }
 
-            public decimal VarianStok { get; set; }
+            [Required]
+            public decimal Stok { get; set; }
 
             [MaxLength(100), Required]
             public string Detail { get; set; }
 
             [Required]
             public decimal Harga { get; set; }
+
       }
 }

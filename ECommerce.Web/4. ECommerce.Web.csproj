@@ -120,6 +120,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BarangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KeranjangController.cs" />
+    <Compile Include="Controllers\VarianController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -920,7 +922,7 @@
     <Content Include="AdminLTE\plugins\timepicker\js\bootstrap-timepicker.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="ECommerceLogo.png" />
+    <Content Include="Content\ECommerceLogo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -997,6 +999,17 @@
     <Content Include="Views\Home\_Login.cshtml" />
     <Content Include="Views\Barang\Index.cshtml" />
     <Content Include="Views\Barang\_List.cshtml" />
+    <Content Include="Views\Barang\_Display.cshtml" />
+    <Content Include="Views\Keranjang\Index.cshtml" />
+    <Content Include="Views\Barang\IndexCRUD.cshtml" />
+    <Content Include="Views\Barang\_Create.cshtml" />
+    <Content Include="Views\Barang\_ListCRUD.cshtml" />
+    <Content Include="Views\Barang\_Edit.cshtml" />
+    <Content Include="Views\Barang\_Delete.cshtml" />
+    <Content Include="Views\Varian\_List.cshtml" />
+    <Content Include="Views\Varian\Index.cshtml" />
+    <Content Include="Views\Varian\_Create.cshtml" />
+    <Content Include="Views\Varian\_Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

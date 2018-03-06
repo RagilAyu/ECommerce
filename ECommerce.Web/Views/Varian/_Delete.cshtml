@@ -1,0 +1,51 @@
+﻿@model ECommerce.ViewModel.VarianViewModel
+
+<h3>Apakah Anda yakin untuk menghapus ini?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ukuran)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ukuran)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deskripsi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deskripsi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="button" class="btn btn-danger btn-delete-confirm" data-id="@Model.Id">Delete</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $(".btn-delete-confirm").click(function () {
+        $.ajax({
+            url: '@Url.Action("DeleteConfirm", "Varian")',
+            type: 'post',
+            data: { id: $(this).attr("data-id") },
+            success: function (result) {
+                if (result.success) {
+                    $("#modal-form").modal("hide");
+                    ShowList();
+                } else {
+                    alert('Error : ' + result.message);
+                }
+            }
+        });
+    });
+</script>

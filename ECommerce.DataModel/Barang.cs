@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
@@ -13,13 +14,13 @@ namespace ECommerce.DataModel
             [Key, DatabaseGenerated (DatabaseGeneratedOption.Identity)]
             public int Id { get; set; }
 
-            [Column(TypeName="image")]
-            public byte[] Gambar { get; set; }
+            public int Varian_Id { get; set; }
+
+            [Column(TypeName="varchar"), MaxLength(1000)]
+            public string PathGambar { get; set; }
 
             [Column(TypeName="varchar"), MaxLength(10), Required]
             public string Kode { get; set; }
-
-            public int Kategori_Id { get; set; }
 
             [Column(TypeName="varchar"), MaxLength(50), Required]
             public string NamaBarang { get; set; }
@@ -30,10 +31,11 @@ namespace ECommerce.DataModel
             [Column(TypeName = "decimal"), Required]
             public decimal Harga { get; set; }
 
-            [ForeignKey("Kategori_Id")]
-            public virtual Kategori Kategori { get; set; }
+            [Column(TypeName = "decimal")]
+            public decimal Stok { get; set; }
 
-            public virtual ICollection<Varian> Varians { get; set; }
+            //public virtual ICollection<Keranjang> Keranjangs { get; set; }
+
             //public virtual ICollection<Ulasan> Ulasan { get; set; }
             //public virtual ICollection<DaftarKeinginan> DaftarKeinginan { get; set; }
             //public virtual ICollection<Keranjang> Keranjang { get; set; }

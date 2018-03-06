@@ -1,0 +1,53 @@
+﻿@model ECommerce.ViewModel.BarangViewModel
+
+<div>
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaBarang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaBarang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VarianUkuran)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VarianUkuran)
+            @*@Html.DropDownListFor(model => model.Varian_Id, (IEnumerable<SelectListItem>)ViewBag.ListVarian, new { @class = "form-control" })*@
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stok)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stok)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Harga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Harga)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button type="button" class="btn btn-success" data-dismiss="modal" title="Masukkan Ke Keranjang">Masukkan Ke Keranjang</button>
+    <button type="button" class="btn btn-danger" data-dismiss="modal" title="Masukkan Ke Wishlist"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+</p>

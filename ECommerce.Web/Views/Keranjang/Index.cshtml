@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="box">
+    <div class="box-body">
+        <table id="table-selling" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Id Barang</th>
+                    <th>Nama Barang</th>
+                    <th>Dettail</th>
+                    <th>Stok</th>
+                    <th>Kuantitas</th>
+                    <th>Total Harga</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="selling-details"></tbody>
+        </table>
+    </div>
+    <div class="box-footer">
+        <div class="row">
+            <div class="col-lg-9">
+                <button class="btn btn-primary" id="btn-payment" value="Payment">Pembayaran</button>
+                <button class="btn btn-default" id="btn-kembali" value="Payment">Kembali Belanja</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-form" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -48,8 +48,9 @@
   <ItemGroup>
     <Compile Include="BarangViewModel.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="KategoriViewModel.cs" />
+    <Compile Include="KeranjangViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReturnValue.cs" />
     <Compile Include="VarianViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

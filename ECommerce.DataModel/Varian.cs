@@ -13,19 +13,9 @@ namespace ECommerce.DataModel
       {
             [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             public int Id { get; set; }
-
-            public int Barang_Id { get; set; }
-
-            [Column(TypeName = "varchar"), MaxLength(10), Required]
-            public string Warna { get; set; }
-
+            
             [Column(TypeName = "varchar"), MaxLength(5), Required]
             public string Ukuran { get; set; }
 
-            [Column(TypeName = "decimal"), Required]
-            public decimal Stok { get; set; }
-
-            [ForeignKey("Barang_Id")]
-            public virtual Barang Barang { get; set; }
       }
 }

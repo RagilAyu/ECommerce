@@ -1,16 +1,16 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Keranjang";
 }
 <div class="box">
     <div class="box-body">
         <table id="table-selling" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Id Barang</th>
                     <th>Nama Barang</th>
-                    <th>Dettail</th>
                     <th>Stok</th>
+                    <th>Detail</th>
+                    <th>Harga Satuan</th>
                     <th>Kuantitas</th>
                     <th>Total Harga</th>
                     <th>Action</th>
@@ -22,8 +22,8 @@
     <div class="box-footer">
         <div class="row">
             <div class="col-lg-9">
-                <button class="btn btn-primary" id="btn-payment" value="Payment">Pembayaran</button>
-                <button class="btn btn-default" id="btn-kembali" value="Payment">Kembali Belanja</button>
+                <button class="btn btn-success" id="btn-add-item" value="Tambah Barang ke Keranjang">Tambah Barang</button>
+                <button class="btn btn-primary" id="btn-payment" value="Pembayaran">Pembayaran</button>
             </div>
         </div>
     </div>
@@ -45,3 +45,17 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    $("#btn-add-item").click(function () {
+        $.ajax({
+            url: '@Url.Action("ListSelect2", "Item2")',
+            type: 'get',
+            data: { filter: $('#txt-search').val() },
+            success: function (result) {
+                $(".modal-title").html("List of Items");
+                $(".modal-body").html(result);
+                $("#modal-form").modal("show");
+            }
+        });
+    });
+</script>

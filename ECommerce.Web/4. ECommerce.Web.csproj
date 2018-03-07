@@ -1010,6 +1010,7 @@
     <Content Include="Views\Varian\Index.cshtml" />
     <Content Include="Views\Varian\_Create.cshtml" />
     <Content Include="Views\Varian\_Delete.cshtml" />
+    <Content Include="Views\Keranjang\_GetByItemId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1023,6 +1024,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ECommerce.DataModel\1. ECommerce.DataModel.csproj">
+      <Project>{9efc7f30-3ed0-48b0-a120-e00fa0c2136e}</Project>
+      <Name>1. ECommerce.DataModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ECommerce.Repo\3. ECommerce.Repo.csproj">
       <Project>{37c9881e-557a-4b0c-9c9d-ec745c428af5}</Project>
       <Name>3. ECommerce.Repo</Name>

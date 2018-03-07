@@ -15,14 +15,14 @@ namespace ECommerce.ViewModel
 
             public string NamaBarang { get; set; }
 
+            public decimal StokBarang { get; set; }
+
             public string Ukuran { get; set; }
 
             public decimal HargaSatuan { get; set; }
 
-            [Required]
             public decimal Kuantitas { get; set; }
 
-            [Required]
             public decimal TotalHarga { get; set; }
       }
 }

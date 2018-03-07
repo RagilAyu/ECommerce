@@ -130,5 +130,31 @@ namespace ECommerce.Repo
                   }
                   return result;
             }
+
+            public static bool ApaAda(int id)
+            {
+                  bool result = true;
+                  try
+                  {
+                        using (var db = new ECommerceContext())
+                        {
+                              Barang barang = db.Mst_Barang.Where(o => o.Id == id).FirstOrDefault();
+                              if (barang != null)
+                              {
+                                    result = true;
+                              }
+                              else
+                              {
+                                    result = false;
+                              }
+                        }
+                  }
+                  catch (Exception ex)
+                  {
+                        result = false;
+                        Message = ex.Message;
+                  }
+                  return result;
+            }
       }
 }

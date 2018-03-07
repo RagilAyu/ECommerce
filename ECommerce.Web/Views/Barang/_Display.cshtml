@@ -47,7 +47,43 @@
     </dl>
 </div>
 <p>
-    <button type="button" class="btn btn-success" data-dismiss="modal" title="Masukkan Ke Keranjang">Masukkan Ke Keranjang</button>
+    <button type="button" class="btn btn-success btn-keranjang" data-dismiss="modal" title="Masukkan Ke Keranjang" data-id="@Model.Id">Masukkan Ke Keranjang</button>
     <button type="button" class="btn btn-danger" data-dismiss="modal" title="Masukkan Ke Wishlist"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 </p>
+
+<script type="text/javascript">
+    $(".btn-keranjang").click(function () {
+        var idx = $(this).attr("data-id");
+        //alert(idx);
+        $.ajax({
+            url: '@Url.Action("ConfirmGet", "Barang")',
+            type: 'post',
+            data: { id: idx },
+            success: function (result) {
+                if (result.success) {
+                    $.ajax({
+                        url: '@Url.Action("KirimKeKeranjang", "Barang")',
+                        type: 'post',
+                        data: { id: idx },
+                        success: function (result) {
+                            if (result.success) {
+                                alert('Pertama : ' + idx);
+                                alert('Hasil : ' + result.message);
+                                $("#modal-form").modal("hide");
+                            } else {
+                                alert('Error : ' + result.message);
+                            }
+                        }
+                    });
+
+                    alert('Kedua : ' + idx);
+                    alert('Hasil : ' + result.message);
+                    $("#modal-form").modal("hide");
+                } else {
+                    alert('Error : ' + result.message);
+                }
+            }
+        });
+    });
+</script>

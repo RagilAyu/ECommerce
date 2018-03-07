@@ -18,17 +18,17 @@ namespace ECommerce.DataModel
 
             public string NamaBarang { get; set; }
 
+            public decimal StokBarang { get; set; }
+
             public string Ukuran { get; set; }
             
-            [Column(TypeName="decimal"), Required]
+            [Column(TypeName="decimal")]
             public decimal Kuantitas { get; set; }
 
             public decimal HargaSatuan { get; set; }
             
-            [Column(TypeName="decimal"), Required]
+            [Column(TypeName="decimal")]
             public decimal TotalHarga { get; set; }
 
-            [ForeignKey("Barang_Id")]
-            public virtual Barang Barang { get; set; }
       }
 }

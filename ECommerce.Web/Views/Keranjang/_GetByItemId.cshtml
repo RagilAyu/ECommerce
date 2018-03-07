@@ -1,0 +1,29 @@
+﻿@model ECommerce.ViewModel.KeranjangViewModel
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Barang_Id, new { htmlAttributes = new { @class = "form-control", @readOnly = "readonly" } })
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.NamaBarang, new { htmlAttributes = new { @class = "form-control", @readOnly = "readonly" } })
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Ukuran, new { htmlAttributes = new { @class = "form-control", @readOnly = "readonly" } })
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.HargaSatuan, new { htmlAttributes = new { @class = "form-control", @readOnly = "readonly" } })
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.StokBarang, new { htmlAttributes = new { @class = "form-control", @readOnly = "readonly" } })
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Kuantitas, new { htmlAttributes = new { @class = "form-control", min = 1, max = @Model.StokBarang, onkeypress = "ChangesValue(this)" } })
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.TotalHarga, new { htmlAttributes = new { @class = "form-control", @readOnly = "readonly" } })
+        </td>
+        <td>
+            <button class="btn btn-danger btn-remove-item" onclick="RemoveItem(this)">Remove</button>
+        </td>
+    </tr>
+

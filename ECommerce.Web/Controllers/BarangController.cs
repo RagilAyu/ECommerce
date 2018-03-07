@@ -110,5 +110,6 @@ namespace ECommerce.Web.Controllers
                         return Json(new { success = false, message = BarangRepo.Message }, JsonRequestBehavior.AllowGet);
                   }
             }
+
       }
 }
